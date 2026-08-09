@@ -1,8 +1,11 @@
-# Community rules — Unofficial MGC Community Marketplace
+# Community rules — Avoda
 
-This project is a **community-run**, **unofficial** directory of people and
+**Avoda** is a **community-run**, **unofficial** directory of people and
 businesses under the MGC umbrella (MGC Main, MGC Global, MGCNLCA, and the
 MGCNLCA Alumni Community).
+
+The product name is **Avoda** (no MGC in the brand title). The audience remains
+the MGC community. See [BRAND.md](./BRAND.md).
 
 ## Rules
 
@@ -34,4 +37,5 @@ MGCNLCA Alumni Community).
 
 ## Provenance
 
-Named and scoped from Slack `#mgc-directory` (2026-08-09), Bryan Chug.
+Scoped from Slack `#mgc-directory` (2026-08-09), Bryan Chug. Product name
+**Avoda** locked in the same channel (2026-08-09).

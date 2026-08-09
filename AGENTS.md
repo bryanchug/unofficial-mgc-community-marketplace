@@ -1,16 +1,20 @@
-# AGENTS.md — Unofficial MGC Community Marketplace
+# AGENTS.md — Avoda
 
 ## What this is
 
-Astro static site for a community directory of businesses/professionals
+**Avoda** — Astro static site for a community directory of businesses/professionals
 affiliated with MGC Main, MGC Global, MGCNLCA, and MGCNLCA Alumni Community.
+
+Brand lock: [BRAND.md](./BRAND.md). Product name is **Avoda** (no MGC in the
+title); audience is still the MGC community; project stays unofficial.
 
 ## Hard constraints
 
-- Follow `COMMUNITY_RULES.md`
+- Follow `COMMUNITY_RULES.md` and `BRAND.md`
 - Never add official MGC / MGCNLCA logos or design elements
 - Do not build product/service catalog features
 - Keep listings affiliation-gated; site remains publicly browsable
+- Do not rename the product away from **Avoda** without Bryan’s go
 
 ## Useful commands
 
