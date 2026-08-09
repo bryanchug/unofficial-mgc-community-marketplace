@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCategoriesSorted } from '../../lib/content';
+
+const categories = await getCategoriesSorted();
+---
+
+<BaseLayout
+	title="Categories"
+	description="Browse business and professional categories in the Unofficial MGC Community Marketplace."
+	currentPath="/categories/"
+>
+	<section class="hero">
+		<p class="hero-kicker">Directory</p>
+		<h1>Categories</h1>
+		<p class="hero-lead">
+			Business and professional categories across the MGC umbrella. Each category page lists businesses
+			alphabetically.
+		</p>
+	</section>
+
+	<section class="section">
+		<div class="category-grid">
+			{
+				categories.map((category) => (
+					<a class="category-link" href={`/categories/${category.id}/`}>
+						<h2>{category.data.title}</h2>
+						<p>{category.data.description}</p>
+					</a>
+				))
+			}
+		</div>
+	</section>
+</BaseLayout>

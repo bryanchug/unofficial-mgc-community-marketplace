@@ -1,0 +1,95 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCategoryById } from '../../lib/content';
+
+export async function getStaticPaths() {
+	const businesses = await getCollection('businesses');
+	return businesses.map((business) => ({
+		params: { slug: business.id },
+		props: { business },
+	}));
+}
+
+const { business } = Astro.props;
+const category = await getCategoryById(business.data.category);
+const { Content } = await render(business);
+---
+
+<BaseLayout
+	title={business.data.name}
+	description={business.data.summary}
+	currentPath={`/businesses/${business.id}/`}
+>
+	<section class="hero">
+		<p class="hero-kicker">
+			{
+				category ? (
+					<a href={`/categories/${category.id}/`}>{category.data.title}</a>
+				) : (
+					'Business'
+				)
+			}
+		</p>
+		<h1>{business.data.name}</h1>
+		<p class="hero-lead">{business.data.summary}</p>
+		<div class="meta-row">
+			{business.data.affiliation.map((item) => <span class="chip">{item}</span>)}
+		</div>
+		{
+			business.data.website ? (
+				<div class="hero-actions">
+					<a
+						class="button button-primary"
+						href={business.data.website}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Visit website
+					</a>
+				</div>
+			) : null
+		}
+	</section>
+
+	<section class="section">
+		<div class="panel">
+			{
+				business.data.owner ? (
+					<p>
+						<strong>Listed by:</strong> {business.data.owner}
+					</p>
+				) : null
+			}
+			{
+				business.data.location ? (
+					<p>
+						<strong>Location:</strong> {business.data.location}
+					</p>
+				) : null
+			}
+			{
+				business.data.contact ? (
+					<p>
+						<strong>Contact:</strong> {business.data.contact}
+					</p>
+				) : null
+			}
+			{
+				business.data.website ? (
+					<p>
+						<strong>Website:</strong>{' '}
+						<a href={business.data.website} target="_blank" rel="noopener noreferrer">
+							{business.data.website}
+						</a>
+					</p>
+				) : null
+			}
+			<hr style="border:0;border-top:1px solid var(--line);margin:1.25rem 0" />
+			<Content />
+			<p class="notice" style="margin-top:1.25rem;margin-bottom:0">
+				This directory lists businesses and professionals only — not individual products or services.
+			</p>
+		</div>
+	</section>
+</BaseLayout>

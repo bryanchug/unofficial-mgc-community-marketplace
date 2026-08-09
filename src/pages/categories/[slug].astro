@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+	getBusinessesByCategory,
+	getCategoriesSorted,
+} from '../../lib/content';
+
+export async function getStaticPaths() {
+	const categories = await getCategoriesSorted();
+	return categories.map((category) => ({
+		params: { slug: category.id },
+		props: { category },
+	}));
+}
+
+const { category } = Astro.props;
+const businesses = await getBusinessesByCategory(category.id);
+---
+
+<BaseLayout
+	title={category.data.title}
+	description={category.data.description}
+	currentPath={`/categories/${category.id}/`}
+>
+	<section class="hero">
+		<p class="hero-kicker">
+			<a href="/categories/">Categories</a>
+		</p>
+		<h1>{category.data.title}</h1>
+		<p class="hero-lead">{category.data.description}</p>
+	</section>
+
+	<section class="section">
+		{
+			businesses.length === 0 ? (
+				<div class="panel">
+					<p style="margin:0">No businesses listed in this category yet.</p>
+				</div>
+			) : (
+				<div class="list">
+					{businesses.map((business) => (
+						<a class="list-item" href={`/businesses/${business.id}/`}>
+							<strong>{business.data.name}</strong>
+							<span>{business.data.summary}</span>
+						</a>
+					))}
+				</div>
+			)
+		}
+	</section>
+</BaseLayout>

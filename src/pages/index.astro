@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCategoriesSorted } from '../lib/content';
+
+const categories = await getCategoriesSorted();
+---
+
+<BaseLayout title="Unofficial MGC Community Marketplace" currentPath="/">
+	<section class="hero">
+		<p class="hero-kicker">Community directory</p>
+		<h1>Unofficial MGC Community Marketplace</h1>
+		<p class="hero-lead">
+			Find businesses and professionals run by people actively affiliated with MGC Main, MGC Global,
+			MGCNLCA, and the Alumni Community. Public to browse — affiliation-limited to list.
+		</p>
+		<div class="hero-actions">
+			<a class="button button-primary" href="/categories/">Browse categories</a>
+			<a class="button button-ghost" href="/rules/">Community rules</a>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="section-header">
+			<div>
+				<h2>Business &amp; professional categories</h2>
+				<p>Pick a category to see listings sorted A–Z. Product and service catalogs are out of scope.</p>
+			</div>
+		</div>
+		<div class="category-grid">
+			{
+				categories.map((category) => (
+					<a class="category-link" href={`/categories/${category.id}/`}>
+						<h3>{category.data.title}</h3>
+						<p>{category.data.description}</p>
+					</a>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="panel notice">
+			<p style="margin:0">
+				This site is <strong>unofficial</strong>. It is not operated by MGC or MGCNLCA, and it never uses
+				their official logos or design system.
+			</p>
+		</div>
+	</section>
+</BaseLayout>

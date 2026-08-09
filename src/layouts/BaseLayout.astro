@@ -1,0 +1,76 @@
+---
+import Analytics from '../components/Analytics.astro';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+	currentPath?: string;
+}
+
+const {
+	title,
+	description = 'Unofficial directory of people and businesses affiliated with MGC / MGCNLCA. Not an official MGC or MGCNLCA project.',
+	currentPath = Astro.url.pathname,
+} = Astro.props;
+
+const pageTitle =
+	title === 'Unofficial MGC Community Marketplace'
+		? title
+		: `${title} · Unofficial MGC Community Marketplace`;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="robots" content="index,follow" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;550;650;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+			rel="stylesheet"
+		/>
+		<title>{pageTitle}</title>
+		<Analytics />
+	</head>
+	<body>
+		<header class="site-shell site-header">
+			<a class="brand-mark" href="/">
+				<strong>Unofficial MGC Community Marketplace</strong>
+				<span>Community directory · not an official MGC site</span>
+			</a>
+			<nav class="nav-links" aria-label="Primary">
+				<a href="/categories/" aria-current={currentPath.startsWith('/categories') ? 'page' : undefined}
+					>Categories</a
+				>
+				<a href="/rules/" aria-current={currentPath.startsWith('/rules') ? 'page' : undefined}
+					>Community rules</a
+				>
+			</nav>
+		</header>
+
+		<main class="site-shell">
+			<slot />
+		</main>
+
+		<footer class="site-shell site-footer">
+			<p>
+				<strong>Unofficial MGC Community Marketplace</strong> is a community-run directory for people
+				actively affiliated with MGC Main, MGC Global, MGCNLCA, and the MGCNLCA Alumni Community.
+			</p>
+			<p>
+				Anyone may browse. Listings are affiliation-limited. We do not use official MGC or MGCNLCA logos
+				or design elements.
+			</p>
+			<p>
+				<a href="/rules/">Read the community rules</a>
+			</p>
+		</footer>
+	</body>
+</html>
