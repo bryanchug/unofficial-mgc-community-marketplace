@@ -12,6 +12,10 @@ directory of **people and businesses** affiliated with:
 in the title); audience stays the MGC community. See [BRAND.md](./BRAND.md) and
 [COMMUNITY_RULES.md](./COMMUNITY_RULES.md).
 
+## Public URL (interim)
+
+**https://avoda.hvn.ph** — working front door for now (see [BRAND.md](./BRAND.md)).
+
 ## Community rules (summary)
 
 1. Listings are limited to people **actively affiliated** with MGC / MGCNLCA (and the orgs above).
