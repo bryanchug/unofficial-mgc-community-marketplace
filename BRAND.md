@@ -40,6 +40,5 @@ Short day-to-day: **Avoda**. Optional longer lockup: **Avoda Market** /
 ## Provenance
 
 Slack `#mgc-directory` / `#avoda` — Bryan Chug locked the name **Avoda**
-(2026-08-09). Repository slug may still say
-`unofficial-mgc-community-marketplace` until renamed; the **product name** is
-Avoda.
+(2026-08-09). **This repo is discontinued** in favor of
+[avoda-ph/avoda-workspace](https://github.com/avoda-ph/avoda-workspace).

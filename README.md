@@ -1,3 +1,15 @@
+> [!WARNING]
+> **This repository is discontinued.**
+>
+> Canonical home is now **[avoda-ph/avoda-workspace](https://github.com/avoda-ph/avoda-workspace)**.
+> The Astro site lives in the `website` submodule
+> ([avoda-ph/avoda-ph.github.io](https://github.com/avoda-ph/avoda-ph.github.io)).
+> Public URL (interim): https://avoda.hvn.ph
+>
+> Do not open new issues, PRs, or commits here.
+
+---
+
 # Avoda
 
 **Avoda** (Hebrew *avodah* — work / worship / service) is a community-run
