@@ -1,13 +1,16 @@
-# Unofficial MGC Community Marketplace
+# Avoda
 
-Community-run directory of **people and businesses** affiliated with:
+**Avoda** (Hebrew *avodah* — work / worship / service) is a community-run
+directory of **people and businesses** affiliated with:
 
 - MGC Main
 - MGC Global
 - MGCNLCA
 - MGCNLCA Alumni Community
 
-**Not an official MGC or MGCNLCA project.** See [COMMUNITY_RULES.md](./COMMUNITY_RULES.md).
+**Not an official MGC or MGCNLCA project.** Brand name stays **Avoda** (no MGC
+in the title); audience stays the MGC community. See [BRAND.md](./BRAND.md) and
+[COMMUNITY_RULES.md](./COMMUNITY_RULES.md).
 
 ## Community rules (summary)
 
@@ -93,5 +96,5 @@ When unset, no analytics script is injected.
 
 ## Branding note
 
-Use original visuals only. Do not copy official MGC / MGCNLCA marks, seals, or
-design systems into this repo or the live site.
+Product name is **Avoda**. Use original visuals only. Do not copy official MGC /
+MGCNLCA marks, seals, or design systems into this repo or the live site.
